@@ -1,0 +1,1041 @@
+
+=== Pa21wj12-1.pdf ===
+23-12-2025 20:35:59 0201222200020drpa01 P0011763   
+Ficha de peritación
+Perito
+GABINETE PERICIAL NORTESPA S.L. B02779346
+Siniestro
+656941120
+Número Orden
+1
+Fecha de Peritación
+23/12/2025
+Solicitante
+E564555
+Datos del Contrato
+N Póliza/Aplic.
+55222481/0
+Ramo - Modalidad
+1230 VH.COM V.03(1ªCAT.) - 0
+Fecha Siniestro
+25/11/2025
+Tomador/Teléfono
+FORM SEGURIDAD VIAL Y TTES, SL / 661951776
+Fecha Alta
+26/03/2024
+Fecha Efecto
+01/04/2024
+Fecha Vto.
+01/03/2025
+Fecha Anul.
+Vehículo Asegurado
+Propietario/a
+FORM SEGURIDAD VIAL Y TTES, SL
+Marca / Modelo
+RENAULT CLIO LIMITED 1.5 DCI 75 E
+Matrícula
+1786KJN
+1ª Matriculación
+01/03/2018
+Potencia
+75
+Color
+Kms.Iniciales
+0
+Garaje
+Sí
+Valor vehículo
+14396
+Accesorios
+0
+Radio
+0
+Franquicia
+0,00
+Daños
+Lateral Izquierdo;Delantera Izquierda;
+Datos Conductor
+Conductor/a/Teléfono
+FORM SEGURIDAD VIAL Y TTES, SL /661951776
+Permiso
+B33985227
+F.Carnet
+Conductor Auto.
+Sexo
+F.Nacimiento
+Descripción
+Lugar Siniestro
+CONSTANTINO SUAREZ EL ESPAÑOLITO
+Lesionados
+0
+Descripción
+EL VEHÍCULO CONTRARIO 6852CYW SALIENDO DE ESTACIONAMIENTO GOLPEA A VEHÍCULO ASEGURADO
+1786kJN
+Datos Contrario
+Nombre
+MARIA ISABEL MENENDEZ FERNANDEZ
+Domicilio
+0
+Población/C.P.
+/
+Marca / Modelo
+RENAULT MEGANE
+Matrícula
+6852CYW
+Color
+Aseguradora
+C031 CASER-CAJA DE SEGUROS
+REUNIDOS, S.A. SEG
+Referencia
+0001/14/2025/2045935
+Peritaje
+Marca / Modelo
+RENAULT CLIO LIMITED 1.5 DCI 75 E
+Matrícula
+1786KJN
+Aseg/contr.
+Asegurado
+Daños
+Lateral Izquierdo;Delantera Izquierda;
+Garantía
+RECLAMAC
+Convenio
+ASCIDE
+Compromiso
+Sí
+Observaciones Cia
+Indemnización sin IVA
+ 
+Observaciones Man.
+     
+Taller
+Taller
+norte motor Gijón, , Multicentro:0
+Domicilio
+en la AS2 Nº 1853
+Población
+GIJON
+Código Pos.
+33211
+Nº Cuenta
+0000-0000-00-00000000000
+Teléfono
+985168264
+Datos del Siniestro
+Número
+Fecha
+Pagos
+Daños
+Culpa
+1
+25/11/2025
+0,00
+0,00
+Contrario
+Datos Peritación
+Kilómetros
+I.T.V.
+1ª Matriculación
+V.I.N.
+Fecha Entrada
+Fecha entrega
+Estado General
+Visto
+Fecha inicio
+Fecha Fin
+Paralización
+Reserva Daños
+...
+
+=== Pa21wj12-2.pdf ===
+23-12-2025 20:36:02 0201222200020drpa01 P0011763   
+Ficha de peritación
+Perito
+GABINETE PERICIAL NORTESPA S.L. B02779346
+Siniestro
+657425648
+Número Orden
+1
+Fecha de Peritación
+23/12/2025
+Solicitante
+E107919
+Datos del Contrato
+N Póliza/Aplic.
+56954825/0
+Ramo - Modalidad
+1289 ALLIANZ AUTO - 0
+Fecha Siniestro
+10/12/2025
+Tomador/Teléfono
+CONSTR. E INTER. GONALMAR S.L. / 637849201
+Fecha Alta
+01/04/2025
+Fecha Efecto
+02/04/2025
+Fecha Vto.
+01/04/2026
+Fecha Anul.
+Vehículo Asegurado
+Propietario/a
+CONSTR. E INTER. GONALMAR S.L.
+Marca / Modelo
+CITROEN BERLINGO FGN 1.6 BHDI 75
+Matrícula
+6217KMB
+1ª Matriculación
+01/06/2018
+Potencia
+75
+Color
+Kms.Iniciales
+0
+Garaje
+Sí
+Valor vehículo
+15861
+Accesorios
+0
+Radio
+0
+Franquicia
+0,00
+Daños
+Trasera Izquierda;Trasera;
+Datos Conductor
+Conductor/a/Teléfono
+MARTINEZ GONZALEZ, FELICIANO /635285085
+Permiso
+09369341S
+F.Carnet
+17/11/1964
+Conductor Auto.
+Sexo
+V
+F.Nacimiento
+17/11/1964
+Descripción
+Lugar Siniestro
+OVIEDO
+Lesionados
+0
+Descripción
+El VA estaba parado. El VC colisionó en la parte de atrás al otro vehículo que circulaba en el mismo sentido y en el
+mismo carril. VC GOLPEÓ POR ALCANCE AL VA.
+Datos Contrario
+Nombre
+ALMA CARRION MENDEZ
+Domicilio
+CL RAMON ROMEA, 8
+Población/C.P.
+/33011
+Marca / Modelo
+PEUGEOT 208
+Matrícula
+4361JVL
+Color
+Aseguradora
+C058 MAPFRE FAMILIAR CIA. DE SEGUROS
+Y REAS.
+Referencia
+523036450
+Peritaje
+Marca / Modelo
+CITROEN BERLINGO FGN 1.6 BHDI 75
+Matrícula
+6217KMB
+Aseg/contr.
+Asegurado
+Daños
+Trasera Izquierda;Trasera;
+Garantía
+Reclamación
+Convenio
+CIDE
+Compromiso
+Sí
+Observaciones Cia
+Indemnización sin IVA
+ 
+Observaciones Man.
+     
+Taller
+Taller
+TALLERES LUIS ALONSO GARCIA (PEUGEOT), B33382359, Multicentro:0
+Domicilio
+PANDO I VALLE Nº 1
+Población
+VILLAVICIOSA
+Código Pos.
+33300
+Nº Cuenta
+0182-0598-91-00101501697
+Teléfono
+985891804
+Datos del Siniestro
+Número
+Fecha
+Pagos
+Daños
+Culpa
+1
+10/12/2025
+0,00
+0,00
+Contrario
+Datos Peritación
+Kilómetros
+I.T.V.
+1ª Matriculación
+V.I.N.
+Fecha Entrada
+Fecha entrega
+Estado General
+Visto
+Fech...
+
+=== Pa21wj12-3.pdf ===
+23-12-2025 20:36:04 0201222200020drpa01 P0011763   
+Ficha de peritación
+Perito
+GABINETE PERICIAL NORTESPA S.L. B02779346
+Siniestro
+657442898
+Número Orden
+1
+Fecha de Peritación
+23/12/2025
+Solicitante
+PA014220
+Datos del Contrato
+N Póliza/Aplic.
+57368642/0
+Ramo - Modalidad
+1285 ALL.AUTO.TODO RIESGO - 0
+Fecha Siniestro
+12/12/2025
+Tomador/Teléfono
+PALACIOS GONZALEZ, JOSE ANTONIO / 985724287
+Fecha Alta
+03/07/2025
+Fecha Efecto
+04/07/2025
+Fecha Vto.
+01/07/2026
+Fecha Anul.
+01/10/2025
+Vehículo Asegurado
+Propietario/a
+PALACIOS GONZALEZ, JOSE ANTONIO
+Marca / Modelo
+HYUNDAI INSTER MAXX 49KWH 5P 115C
+Matrícula
+4512NDD
+1ª Matriculación
+01/07/2025
+Potencia
+115
+Color
+Kms.Iniciales
+0
+Garaje
+Sí
+Valor vehículo
+28000
+Accesorios
+0
+Radio
+0
+Franquicia
+300,00
+Daños
+Delantera Izquierda;Delantera;Delantera
+Derecha;
+Datos Conductor
+Conductor/a/Teléfono
+PALACIOS GONZALEZ, JOSE ANTONIO /985724287
+Permiso
+10567716K
+F.Carnet
+10/10/1956
+Conductor Auto.
+Sexo
+V
+F.Nacimiento
+10/10/1956
+Descripción
+Lugar Siniestro
+estacionamiento Bricomat siero
+Lesionados
+0
+Descripción
+El VC daba marcha atrás. El VA estaba estacionado y es golpeado por contrario
+Datos Contrario
+Nombre
+IÑIGO CALLES OYALBIDE
+Domicilio
+CL uria, 18
+Población/C.P.
+/33003
+Marca / Modelo
+DACIA DUSTER
+Matrícula
+6451JBD
+Color
+Aseguradora
+C468 OCCIDENT GCO SOCIEDAD
+ANONIMA DE SEGUROS
+Referencia
+40055832
+Peritaje
+Marca / Modelo
+HYUNDAI INSTER MAXX 49KWH 5P 115C
+Matrícula
+4512NDD
+Aseg/contr.
+Asegurado
+Daños
+Delantera Izquierda;Delantera;Delantera
+Derecha;
+Garantía
+Daños con fr
+Convenio
+ASCIDE
+Compromiso
+Total
+Observaciones Cia
+Indemnización con IVA
+ 
+Observaciones Man.
+Dejará coche a las 15:00     
+Taller
+Taller
+VALLINA AUTOMOCION, 71697402P, Multicentro:0
+Domicilio
+MARQUES DE VILLAVICIOSA Nº 18
+Población
+VILLAVICIOSA
+Código Pos.
+33300
+Nº Cuenta
+2048-0025-10-00340007424
+Teléfono
+985892291
+Datos del Siniestro
+Número
+Fecha
+Pagos
+Daños
+Culpa
+1
+12/12/2025
+0,00
+0,00
+Contrario
+Datos Peritación
+Kilómetros
+I.T.V.
+1ª Matriculación
+V.I.N.
+Fecha Entrada
+Fech...
+
+=== Pa21wj12-4.pdf ===
+23-12-2025 20:36:06 0201222200020drpa01 P0011763   
+Ficha de peritación
+Perito
+GABINETE PERICIAL NORTESPA S.L. B02779346
+Siniestro
+657490832
+Número Orden
+1
+Fecha de Peritación
+23/12/2025
+Solicitante
+PA014137
+Datos del Contrato
+N Póliza/Aplic.
+55200875/0
+Ramo - Modalidad
+1285 ALL.AUTO.TODO RIESGO - 0
+Fecha Siniestro
+17/12/2025
+Tomador/Teléfono
+PEÑA CUERVO, JULIA / 670034417
+Fecha Alta
+21/03/2024
+Fecha Efecto
+01/04/2024
+Fecha Vto.
+01/04/2025
+Fecha Anul.
+Vehículo Asegurado
+Propietario/a
+PEÑA CUERVO, JULIA
+Marca / Modelo
+RENAULT SCENIC BOSE EDIT 1.6DCI 1
+Matrícula
+2605HWM
+1ª Matriculación
+01/03/2014
+Potencia
+130
+Color
+Kms.Iniciales
+0
+Garaje
+Sí
+Valor vehículo
+27900
+Accesorios
+2219
+Radio
+0
+Franquicia
+400,00
+Daños
+Lateral Izquierdo;Delantera
+Izquierda;Delantera;
+Datos Conductor
+Conductor/a/Teléfono
+ALVAREZ PEÑA, CARLOS /670034417
+Permiso
+76960237Y
+F.Carnet
+05/09/1985
+Conductor Auto.
+Sexo
+V
+F.Nacimiento
+05/09/1985
+Descripción
+Lugar Siniestro
+INFIESTO
+Lesionados
+0
+Descripción
+El VA estaba estacionado. El VC iba a estacionar.
+Datos Contrario
+Nombre
+DIEGO CATURLA FERNANDEZ,
+Domicilio
+0
+Población/C.P.
+/
+Marca / Modelo
+PEUGEOT EXPERT
+Matrícula
+5423KSK
+Color
+Aseguradora
+C109 ALLIANZ, CIA DE SEGUROS Y
+REASEGUROS S.A
+Referencia
+879290785
+Peritaje
+Marca / Modelo
+RENAULT SCENIC BOSE EDIT 1.6DCI 1
+Matrícula
+2605HWM
+Aseg/contr.
+Asegurado
+Daños
+Lateral Izquierdo;Delantera
+Izquierda;Delantera;
+Garantía
+Daños con fr
+Convenio
+ASCIDE
+Compromiso
+Total
+Observaciones Cia
+Indemnización con IVA
+ 
+Observaciones Man.
+     
+Taller
+Taller
+TALLERES ELADIO, S.L., B33392945, Multicentro:0
+Domicilio
+LA VEGA Nº 0
+Población
+INFIESTO (PILOÑA)
+Código Pos.
+33530
+Nº Cuenta
+0030-7011-12-00293451273
+Teléfono
+0
+Datos del Siniestro
+Número
+Fecha
+Pagos
+Daños
+Culpa
+1
+17/12/2025
+0,00
+0,00
+Contrario
+Datos Peritación
+Kilómetros
+I.T.V.
+1ª Matriculación
+V.I.N.
+Fecha Entrada
+Fecha entrega
+Estado General
+Visto
+Fecha inicio
+Fecha Fin
+Paralización
+Reserva Daños
+...
+
+=== Pa21wj12-5.pdf ===
+23-12-2025 20:36:08 0201222200020drpa01 P0011763   
+Ficha de peritación
+Perito
+GABINETE PERICIAL NORTESPA S.L. B02779346
+Siniestro
+657555585
+Número Orden
+1
+Fecha de Peritación
+23/12/2025
+Solicitante
+PA014280
+Datos del Contrato
+N Póliza/Aplic.
+47609394/0
+Ramo - Modalidad
+1285 ALL.AUTO.TODO RIESGO - 0
+Fecha Siniestro
+20/12/2025
+Tomador/Teléfono
+NOVAL COFIÑO, JUAN LUIS / 676702185
+Fecha Alta
+25/08/2020
+Fecha Efecto
+25/08/2020
+Fecha Vto.
+01/09/2021
+Fecha Anul.
+Vehículo Asegurado
+Propietario/a
+NOVAL COFIÑO, JUAN LUIS
+Marca / Modelo
+TOYOTA VERSO ADVANCE 1.6 D 115 5
+Matrícula
+0070JHM
+1ª Matriculación
+01/08/2015
+Potencia
+111
+Color
+Kms.Iniciales
+0
+Garaje
+Sí
+Valor vehículo
+24200
+Accesorios
+0
+Radio
+0
+Franquicia
+240,00
+Daños
+Delantera Izquierda;Delantera;Delantera
+Derecha;
+Datos Conductor
+Conductor/a/Teléfono
+NOVAL COFIÑO, JUAN LUIS /676702185
+Permiso
+10796173L
+F.Carnet
+06/08/1955
+Conductor Auto.
+Sexo
+V
+F.Nacimiento
+06/08/1955
+Descripción
+Lugar Siniestro
+BIMENES
+Lesionados
+0
+Descripción
+V.A. REALIZANDO MANIOBRA DE ESTACIONAMIENTO ALCANZA MURETE Y SUFRE DAÑOS EN DELANTERA:
+DEFENSA Y ALETA
+Datos Contrario
+Nombre
+Domicilio
+6448
+Población/C.P.
+/
+Marca / Modelo
+Matrícula
+Color
+Aseguradora
+Referencia
+Peritaje
+Marca / Modelo
+TOYOTA VERSO ADVANCE 1.6 D 115 5
+Matrícula
+0070JHM
+Aseg/contr.
+Asegurado
+Daños
+Delantera Izquierda;Delantera;Delantera
+Derecha;
+Garantía
+Daños con fr
+Convenio
+Compromiso
+Sí
+Observaciones Cia
+Indemnización con IVA
+ 
+Observaciones Man.
+     
+Taller
+Taller
+ASTURHIBRIDO, B74435090, Multicentro:0
+Domicilio
+AS-11, Nº 1939 Nº 0
+Población
+GIJON
+Código Pos.
+33392
+Nº Cuenta
+2100-8666-35-00200049285
+Teléfono
+985168978
+Datos del Siniestro
+Número
+Fecha
+Pagos
+Daños
+Culpa
+1
+20/12/2025
+0,00
+0,00
+Datos Peritación
+Kilómetros
+I.T.V.
+1ª Matriculación
+V.I.N.
+Fecha Entrada
+Fecha entrega
+Estado General
+Visto
+Fecha inicio
+Fecha Fin
+Paralización
+Reserva Daños
+...
+
+=== Pa21wj12-6.pdf ===
+23-12-2025 20:36:10 0201222200020drpa01 P0011763   
+Ficha de peritación
+Perito
+GABINETE PERICIAL NORTESPA S.L. B02779346
+Siniestro
+879053067
+Número Orden
+1
+Fecha de Peritación
+23/12/2025
+Solicitante
+SM08RGR
+Datos del Contrato
+N Póliza/Aplic.
+55780753/0
+Ramo - Modalidad
+1285 ALL.AUTO.TODO RIESGO - 0
+Fecha Siniestro
+21/11/2025
+Tomador/Teléfono
+SUAREZ MORENO, JOSE RAMON / 617323550
+Fecha Alta
+24/07/2024
+Fecha Efecto
+15/07/2024
+Fecha Vto.
+01/07/2025
+Fecha Anul.
+Vehículo Asegurado
+Propietario/a
+SUAREZ MORENO, JOSE RAMON
+Marca / Modelo
+CITROEN C-ELYSEE 1.6 BLUEHDI SHIN
+Matrícula
+7014KRP
+1ª Matriculación
+01/11/2018
+Potencia
+99
+Color
+Kms.Iniciales
+0
+Garaje
+Sí
+Valor vehículo
+16800
+Accesorios
+0
+Radio
+0
+Franquicia
+160,00
+Daños
+Sin daños
+Datos Conductor
+Conductor/a/Teléfono
+SUAREZ MORENO, JOSE RAMON /617323550
+Permiso
+11406556M
+F.Carnet
+22/05/1962
+Conductor Auto.
+Sexo
+V
+F.Nacimiento
+22/05/1962
+Descripción
+Lugar Siniestro
+Lesionados
+0
+Descripción
+RECIBIDA RECLAMACION SIN PARTE REGISTRADO
+Datos Contrario
+Nombre
+Domicilio
+0
+Población/C.P.
+/
+Marca / Modelo
+Matrícula
+4948LFN
+Color
+Aseguradora
+M050 PELAYO, MUTUA DE SEGUROS Y
+REAS. A.P.F.
+Referencia
+2521391101RC
+Peritaje
+Marca / Modelo
+CITROEN C-ELYSEE 1.6 BLUEHDI SHIN
+Matrícula
+7014KRP
+Aseg/contr.
+Asegurado
+Daños
+Sin daños
+Garantía
+Daños con fr
+Convenio
+CIDE
+Compromiso
+Sí
+Observaciones Cia
+Indemnización con IVA
+ 
+Observaciones Man.
+     
+Taller
+Taller
+VALGISA, A33606682, Multicentro:0
+Domicilio
+AS-18 Nº 967
+Población
+GIJON
+Código Pos.
+33211
+Nº Cuenta
+0049-6735-12-02810000799
+Teléfono
+985307500
+Datos del Siniestro
+Número
+Fecha
+Pagos
+Daños
+Culpa
+1
+21/11/2025
+1114,00
+0,00
+Asegurado
+2
+09/11/2024
+1057,00
+0,00
+Asegurado
+Datos Peritación
+Kilómetros
+I.T.V.
+1ª Matriculación
+V.I.N.
+Fecha Entrada
+Fecha entrega
+Estado General
+Visto
+Fecha inicio
+Fecha Fin
+Paralización
+Reserva Daños
+Siniestro con IVS activado, ver reglas en Datos Resumen / Gestión IVS
+...
+
+=== Pa21wj12-7.pdf ===
+23-12-2025 20:36:12 0201222200020drpa01 P0011763   
+Ficha de peritación
+Perito
+GABINETE PERICIAL NORTESPA S.L. B02779346
+Siniestro
+879270057
+Número Orden
+1
+Fecha de Peritación
+23/12/2025
+Solicitante
+PA014280
+Datos del Contrato
+N Póliza/Aplic.
+49585114/0
+Ramo - Modalidad
+1285 ALL.AUTO.TODO RIESGO - 0
+Fecha Siniestro
+15/12/2025
+Tomador/Teléfono
+ACUÑA LOPEZ, ABELARDO / 600724817
+Fecha Alta
+16/11/2021
+Fecha Efecto
+13/12/2021
+Fecha Vto.
+01/12/2022
+Fecha Anul.
+Vehículo Asegurado
+Propietario/a
+ACUÑA LOPEZ, ABELARDO
+Marca / Modelo
+RENAULT CLIO LIMITED 0.9TCE ENERG
+Matrícula
+3895KFZ
+1ª Matriculación
+01/12/2017
+Potencia
+90
+Color
+Kms.Iniciales
+0
+Garaje
+Sí
+Valor vehículo
+15450
+Accesorios
+0
+Radio
+0
+Franquicia
+200,00
+Daños
+Lateral Derecho;Delantera Derecha;
+Datos Conductor
+Conductor/a/Teléfono
+ACUÑA LOPEZ, ABELARDO /600724817
+Permiso
+10803147R
+F.Carnet
+09/05/1956
+Conductor Auto.
+Sexo
+V
+F.Nacimiento
+09/05/1956
+Descripción
+Lugar Siniestro
+AVENIDA PRINCIPE DE ASTURIAS
+Lesionados
+0
+Descripción
+AL SALIR DE ROTONDA DE TRES CARRILES EL ASEGURADO CIRCULA POR CARRIL EXTERIOR (TERCER CARRIL).
+V/C AL CAMBIAR DE CARRIL DEL CENTRAL AL IZDA INVADE CARRIL DEL V/A COLISIONANDO
+Datos Contrario
+Nombre
+Domicilio
+0
+Población/C.P.
+/
+Marca / Modelo
+CITROEN C3
+Matrícula
+6914FML
+Color
+Aseguradora
+C058 MAPFRE FAMILIAR CIA. DE SEGUROS
+Y REAS.
+Referencia
+523007863
+Peritaje
+Marca / Modelo
+RENAULT CLIO LIMITED 0.9TCE ENERG
+Matrícula
+3895KFZ
+Aseg/contr.
+Asegurado
+Daños
+Lateral Derecho;Delantera Derecha;
+Garantía
+RCSO Materia
+Convenio
+ASCIDE
+Compromiso
+No
+Observaciones Cia
+Indemnización con IVA
+ 
+Observaciones Man.
+     
+Taller
+Taller
+NORTE MOTOR SLU - CONCESIONARIO RENAULT, B33967985, Multicentro:0
+Domicilio
+GIJON-OVIEDO, KM Nº 0
+Población
+GIJON
+Código Pos.
+33392
+Nº Cuenta
+0075-0209-18-00600036468
+Teléfono
+985168271
+Datos del Siniestro
+Número
+Fecha
+Pagos
+Daños
+Culpa
+1
+15/12/2025
+0,00
+0,00
+Asegurado
+2
+09/06/2025
+392,82
+0,00
+3
+17/08/2022
+235,58
+0,00
+Contrario
+Datos Peritación
+Kilómetros
+I.T.V.
+1ª Matriculación
+...

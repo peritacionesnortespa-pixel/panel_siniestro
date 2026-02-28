@@ -1,0 +1,310 @@
+:root {
+  --bg-primary: #e0f2fe;      /* azul claro fondo */
+  --bg-secondary: #f0f9ff;
+  --bg-card: #ffffff;
+  --primary: #7c3aed;         /* morado principal */
+  --primary-dark: #6d28d9;
+  --success: #10b981;
+  --danger: #ef4444;
+  --warning: #f59e0b;
+  --text-primary: #1e293b;
+  --text-secondary: #475569;
+  --border: rgba(147, 51, 234, 0.2);
+  --shadow: 0 25px 50px -12px rgba(124, 58, 237, 0.25);
+  --shadow-light: 0 10px 30px rgba(0,0,0,0.1);
+  --radius: 20px;
+  --glass: rgba(255,255,255,0.9);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  background: linear-gradient(135deg, #bfdbfe 0%, #e0f2fe 50%, #f0f9ff 100%);
+  color: var(--text-primary);
+  min-height: 100vh;
+}
+
+/* CABECERA ----------------------------------------------------- */
+
+.topbar {
+  padding: 24px 40px;
+  background: var(--glass);
+  backdrop-filter: blur(30px);
+  border-bottom: 1px solid var(--border);
+  box-shadow: var(--shadow-light);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+}
+
+.topbar-left {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.titulo-principal {
+  font-size: 28px;
+  font-weight: 800;
+  color: var(--text-primary);
+  letter-spacing: -0.5px;
+}
+
+.subtitulo {
+  font-size: 14px;
+  color: var(--text-secondary);
+}
+
+/* Ajuste específico para Logo y Botones alineados */
+.topbar-right {
+  display: flex;
+  align-items: center;
+  gap: 25px; /* Espacio entre el logo y los botones */
+}
+
+.logo-empresa {
+  height: 60px; /* Tamaño ideal */
+  width: auto;
+  object-fit: contain;
+  display: block;
+}
+
+.botones-grupo {
+  display: flex;
+  gap: 12px;
+}
+
+/* Botón importar */
+.btn-import-pdf {
+  background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+  color: white;
+  border: none;
+  padding: 12px 20px;
+  border-radius: 16px;
+  font-weight: 700;
+  font-size: 14px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 8px 20px rgba(124, 58, 237, 0.3);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.btn-import-pdf:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 25px rgba(124, 58, 237, 0.4);
+}
+
+/* BUSCADOR ----------------------------------------------------- */
+
+.search-wrapper {
+  margin-top: 8px;
+  position: relative;
+  max-width: 420px;
+}
+
+.search-wrapper input {
+  width: 100%;
+  padding: 10px 14px 10px 34px;
+  border-radius: 999px;
+  border: 1px solid var(--border);
+  background: rgba(255,255,255,0.9);
+  font-size: 14px;
+  color: var(--text-primary);
+}
+
+.search-icon {
+  position: absolute;
+  left: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 14px;
+}
+
+/* ESTADÍSTICAS ------------------------------------------------- */
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 16px;
+  padding: 32px 40px 10px; /* Reducido abajo para la barra de progreso */
+}
+
+.stat-card {
+  background: linear-gradient(145deg, var(--glass), rgba(124, 58, 237, 0.12));
+  border-radius: var(--radius);
+  padding: 20px;
+  text-align: center;
+  border: 1px solid var(--border);
+  backdrop-filter: blur(18px);
+  box-shadow: var(--shadow-light);
+  transition: all 0.3s ease;
+}
+
+.stat-card:hover {
+  transform: translateY(-5px);
+  border-color: var(--primary);
+}
+
+.stat-value {
+  font-size: 32px;
+  font-weight: 800;
+  color: var(--primary);
+  display: block;
+}
+
+.stat-label {
+  font-size: 13px;
+  color: var(--text-secondary);
+  font-weight: 700;
+  margin-top: 4px;
+}
+
+/* PESTAÑAS ------------------------------------------------------ */
+
+.tabs-nav {
+  display: flex;
+  background: var(--glass);
+  border-radius: var(--radius);
+  padding: 6px;
+  margin: 0 40px 32px;
+  backdrop-filter: blur(24px);
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow-light);
+  gap: 6px;
+}
+
+.tab-btn {
+  flex: 1;
+  padding: 14px 20px;
+  border: none;
+  background: transparent;
+  color: var(--text-secondary);
+  font-size: 15px;
+  font-weight: 700;
+  border-radius: calc(var(--radius) - 8px);
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+.tab-btn.active {
+  background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+  color: white;
+  box-shadow: 0 10px 20px rgba(124, 58, 237, 0.3);
+}
+
+/* TABLAS -------------------------------------------------------- */
+
+.data-grid {
+  background: var(--glass);
+  border-radius: var(--radius);
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow-light);
+  overflow: hidden;
+  backdrop-filter: blur(20px);
+  margin-bottom: 32px;
+}
+
+.data-grid table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.data-grid th {
+  background: rgba(124, 58, 237, 0.05);
+  padding: 16px 12px;
+  text-align: left;
+  font-weight: 800;
+  font-size: 12px;
+  text-transform: uppercase;
+  color: var(--text-primary);
+  border-bottom: 2px solid var(--border);
+}
+
+.data-grid td {
+  padding: 14px 12px;
+  font-size: 14px;
+  border-bottom: 1px solid rgba(148, 163, 184, 0.1);
+}
+
+.data-grid tr:hover {
+  background: rgba(124, 58, 237, 0.04);
+}
+
+/* Foto miniatura */
+.foto-mini {
+  width: 48px;
+  height: 48px;
+  border-radius: 12px;
+  object-fit: cover;
+  border: 2px solid var(--primary);
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+.foto-mini:hover {
+  transform: scale(1.1);
+}
+
+/* FORMULARIOS --------------------------------------------------- */
+
+.form-section {
+  padding: 28px;
+  background: var(--glass);
+  border-radius: var(--radius);
+  border: 1px solid var(--border);
+}
+
+.siniestro-form {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 12px;
+}
+
+.siniestro-form button {
+  grid-column: 1 / -1;
+  background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+  color: white;
+  padding: 14px;
+  border-radius: 16px;
+  font-weight: 700;
+  border: none;
+  cursor: pointer;
+}
+
+/* MODALES ------------------------------------------------------- */
+
+.modal {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(15, 23, 42, 0.7);
+  backdrop-filter: blur(10px);
+  z-index: 1000;
+  align-items: center;
+  justify-content: center;
+}
+
+.modal.active { display: flex; }
+
+.modal-content {
+  background: white;
+  border-radius: 24px;
+  padding: 30px;
+  width: 90%;
+  max-width: 650px;
+}
+
+/* RESPONSIVE ---------------------------------------------------- */
+
+@media (max-width: 900px) {
+  .topbar { flex-direction: column; text-align: center; }
+  .topbar-right { flex-direction: column; width: 100%; }
+}

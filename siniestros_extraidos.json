@@ -1,0 +1,80 @@
+[
+  {
+    "compania": "Allianz",
+    "numeroSiniestro": "650714778",
+    "fechaPeritacion": "2026-02-26",
+    "marcaModelo": "MERCEDES BENZ GLE (167) COUPE 350 DE 4M",
+    "matricula": "1643MDR",
+    "taller": "ACOAT - CARROCERIAS LOS ANGELES",
+    "estado": "En curso",
+    "compromisoPago": "Sí",
+    "garantia": "Daños con fr",
+    "fotos": [],
+    "archivos": []
+  },
+  {
+    "compania": "Allianz",
+    "numeroSiniestro": "659038384",
+    "fechaPeritacion": "2026-02-26",
+    "marcaModelo": "VOLKSWAGEN GOLF SPORTLINE 1.9 TDI 5P",
+    "matricula": "8239DGK",
+    "taller": "AUTOMOCION GABER",
+    "estado": "En curso",
+    "compromisoPago": "Sí",
+    "garantia": "Reclamación",
+    "fotos": [],
+    "archivos": []
+  },
+  {
+    "compania": "Allianz",
+    "numeroSiniestro": "659165624",
+    "fechaPeritacion": "2026-02-26",
+    "marcaModelo": "KYMCO SUPER DINK 125 125 125C.C",
+    "matricula": "7529JSM",
+    "taller": "MOTORBOX GIJON TEAM",
+    "estado": "En curso",
+    "compromisoPago": "Sí",
+    "garantia": "RECLAMAC",
+    "fotos": [],
+    "archivos": []
+  },
+  {
+    "compania": "Allianz",
+    "numeroSiniestro": "659384780",
+    "fechaPeritacion": "2026-02-26",
+    "marcaModelo": "YAMAHA YP 125 124C.C.",
+    "matricula": "2384LVY",
+    "taller": "TALLER RACING DAY",
+    "estado": "En curso",
+    "compromisoPago": "No",
+    "garantia": "RECLAMAC",
+    "fotos": [],
+    "archivos": []
+  },
+  {
+    "compania": "Allianz",
+    "numeroSiniestro": "659416070",
+    "fechaPeritacion": "2026-02-26",
+    "marcaModelo": "PEUGEOT TWEET 125 EVO 125C.C.",
+    "matricula": "9260JWN",
+    "taller": "MOTOS DANI",
+    "estado": "En curso",
+    "compromisoPago": "No",
+    "garantia": "RECLAM.",
+    "fotos": [],
+    "archivos": []
+  },
+  {
+    "compania": "Allianz",
+    "numeroSiniestro": "659429394",
+    "fechaPeritacion": "2026-02-26",
+    "marcaModelo": "RENAULT TRAFIC 29 FGN C 1.6DCI 95",
+    "matricula": "9108KPJ",
+    "taller": "GARAJE COVADONGA",
+    "estado": "En curso",
+    "compromisoPago": "No",
+    "garantia": "Reclamación",
+    "fotos": [],
+    "archivos": []
+  }
+]

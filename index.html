@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Control de Expedientes - Nortespa</title>
+  <link rel="stylesheet" href="styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+  <header class="topbar">
+    <div class="topbar-left">
+      <div class="titulo-principal">Control de Expedientes</div>
+      <div class="subtitulo">Gabinete Pericial Nortespa | Rubén Lastra</div>
+      <div class="search-wrapper">
+        <span class="search-icon">🔍</span>
+        <input id="buscador" type="text" placeholder="Buscar por siniestro, matrícula, taller o garantía...">
+      </div>
+    </div>
+
+    <div class="topbar-right">
+      <img src="logo.png" alt="Nortespa" class="logo-empresa">
+      <div class="botones-grupo" style="display: flex; gap: 10px; flex-wrap: wrap; justify-content: flex-end;">
+        <input type="file" id="file-import-json" accept=".json" style="display:none;">
+        <button class="btn-import-pdf" onclick="document.getElementById('file-import-json').click()">📥 Importar JSON</button>
+        <input type="file" id="file-import-pdf" accept=".pdf" multiple style="display:none;">
+        <button class="btn-import-pdf" onclick="document.getElementById('file-import-pdf').click()">📄 Importar PDFs</button>
+        <button class="btn-import-pdf" onclick="exportarBackupJSON()" style="background: #059669;">💾 Backup SQL</button>
+      </div>
+    </div>
+  </header>
+
+  <section class="stats-grid">
+    <div class="stat-card" style="border-color: var(--primary);">
+      <span class="stat-value" id="count-total">0</span>
+      <span class="stat-label">Total Expedientes</span>
+    </div>
+    <div class="stat-card">
+      <span class="stat-value" id="count-en-curso">0</span>
+      <span class="stat-label">En curso</span>
+    </div>
+    <div class="stat-card">
+      <span class="stat-value" id="count-pendiente-peritar">0</span>
+      <span class="stat-label">Pendiente peritar</span>
+    </div>
+    <div class="stat-card">
+      <span class="stat-value" id="count-cerrado">0</span>
+      <span class="stat-label">Cerrado</span>
+    </div>
+    <div class="stat-card">
+      <span class="stat-value" id="count-perdida-total">0</span>
+      <span class="stat-label">Pérdida Total</span>
+    </div>
+    <div class="stat-card">
+      <span class="stat-value" id="count-cancelado">0</span>
+      <span class="stat-label">Cancelado</span>
+    </div>
+    <div class="stat-card">
+      <span class="stat-value" id="count-fraude-parcial">0</span>
+      <span class="stat-label">Fraude Parcial</span>
+    </div>
+    <div class="stat-card">
+      <span class="stat-value" id="count-fraude-total">0</span>
+      <span class="stat-label">Fraude Total</span>
+    </div>
+  </section>
+
+  <div style="margin: 0 40px 25px; background: rgba(255,255,255,0.4); border-radius: 20px; height: 12px; overflow: hidden; border: 1px solid var(--border); box-shadow: inset 0 2px 4px rgba(0,0,0,0.05);">
+    <div id="progreso-siniestros" style="background: linear-gradient(90deg, var(--primary), var(--primary-dark)); height: 100%; width: 0%; transition: width 0.8s cubic-bezier(0.4, 0, 0.2, 1);"></div>
+  </div>
+
+  <nav class="tabs-nav">
+    <button data-tab="en-curso" class="tab-btn active">En curso</button>
+    <button data-tab="cerrados" class="tab-btn">Cerrados</button>
+    <button data-tab="cancelado" class="tab-btn">Cancelado</button>
+    <button data-tab="ausentes" class="tab-btn">Ausentes</button>
+  </nav>
+
+  <main class="tabs-content">
+    <section id="tab-en-curso" class="tab-content active">
+      <div class="content-header"><h2>Siniestros en curso / Pendientes</h2></div>
+      <div id="lista-en-curso" class="data-grid"></div>
+      
+      <div class="form-section">
+        <h3>➕ Nuevo siniestro manual</h3>
+        <form id="form-siniestro" class="siniestro-form" onsubmit="guardarSiniestro(event); return false;">
+          <select id="compania" name="compania" required>
+            <option value="">Selecciona compañía</option>
+            <option value="Allianz">Allianz</option>
+            <option value="BBVA Allianz">BBVA Allianz</option>
+            <option value="Internexo">Internexo</option>
+          </select>
+          <input id="numero_siniestro" name="numero_siniestro" placeholder="Nº siniestro" required>
+          <input id="fecha_peritacion" type="date" name="fecha_peritacion" required>
+          <input id="marca_modelo" name="marca_modelo" placeholder="Marca/Modelo" required>
+          <input id="matricula" name="matricula" placeholder="Matrícula" required>
+          <input id="taller" name="taller" placeholder="Taller" required>
+          <select id="estado" name="estado" required>
+            </select>
+          <input id="garantia" name="garantia" placeholder="Garantía (ej: Daños, RC...)">
+          <input id="compromiso_pago" name="compromiso_pago" placeholder="Compromiso de pago">
+          <button type="submit" style="background:#6366f1;color:white;">💾 Guardar Expediente</button>
+        </form>
+      </div>
+    </section>
+
+    <section id="tab-cerrados" class="tab-content">
+      <div class="content-header"><h2>Siniestros cerrados</h2></div>
+      <div id="lista-cerrados" class="data-grid"></div>
+    </section>
+
+    <section id="tab-cancelado" class="tab-content">
+      <div class="content-header"><h2>Siniestros cancelados</h2></div>
+      <div id="lista-cancelado" class="data-grid"></div>
+    </section>
+
+    <section id="tab-ausentes" class="tab-content">
+      <div class="content-header"><h2>Clientes ausentes</h2></div>
+      <div id="lista-ausentes" class="data-grid"></div>
+    </section>
+  </main>
+
+  <div id="modal-archivos" class="modal">
+    <div class="modal-content">
+      <h3 id="modal-titulo">Documentación del siniestro</h3>
+      <div id="lista-archivos" class="archivos-grid"></div>
+      <div style="margin-top: 20px; padding: 15px; border: 2px dashed var(--border); border-radius: 12px; text-align: center;">
+        <input type="file" id="file-modal-subir" accept="image/*,.pdf,.doc,.docx" multiple style="margin-bottom: 10px;">
+        <div class="modal-actions">
+          <button onclick="subirArchivosSeleccionados(event)" class="btn primary">📤 Subir seleccionados</button>
+          <button onclick="cerrarModalArchivos()" class="btn secondary">Cerrar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="app.js"></script>
+
+  <script>
+    function exportarBackupJSON() {
+        if (typeof siniestros !== 'undefined' && siniestros.length > 0) {
+            const dataStr = JSON.stringify(siniestros, null, 2);
+            const dataUri = 'data:application/json;charset=utf-8,'+ encodeURIComponent(dataStr);
+            const exportFileDefaultName = 'backup_nortespa_sql.json';
+            const linkElement = document.createElement('a');
+            linkElement.setAttribute('href', dataUri);
+            linkElement.setAttribute('download', exportFileDefaultName);
+            linkElement.click();
+        } else {
+            alert("No hay datos cargados para exportar");
+        }
+    }
+  </script>
+</body>
+</html>
