@@ -6,6 +6,79 @@
   <title>Control de Expedientes - Nortespa</title>
   <link rel="stylesheet" href="styles.css">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    .btn-notas {
+      padding: 6px 10px;
+      border-radius: 999px;
+      border: 1px solid var(--border);
+      background: rgba(124, 58, 237, 0.08);
+      cursor: pointer;
+      font-size: 12px;
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+    }
+    .btn-notas:hover {
+      background: rgba(124, 58, 237, 0.18);
+    }
+    .recordatorio-activo {
+      box-shadow: 0 0 0 2px #f59e0b inset;
+      background-color: #fff7d6 !important;
+    }
+    .recordatorio-vencido {
+      box-shadow: 0 0 0 2px #ef4444 inset;
+      background-color: #fee2e2 !important;
+    }
+    .modal-notas-campos label {
+      display: block;
+      font-size: 14px;
+      margin-top: 10px;
+      margin-bottom: 4px;
+      color: var(--text-primary);
+      font-weight: 600;
+    }
+    .modal-notas-campos textarea {
+      width: 100%;
+      border-radius: 12px;
+      border: 1px solid var(--border);
+      padding: 8px 10px;
+      font-family: inherit;
+      font-size: 14px;
+      resize: vertical;
+      min-height: 120px;
+    }
+    .modal-notas-campos input[type="datetime-local"] {
+      width: 100%;
+      border-radius: 999px;
+      border: 1px solid var(--border);
+      padding: 8px 12px;
+      font-size: 14px;
+    }
+    .modal-notas-acciones {
+      margin-top: 18px;
+      display: flex;
+      justify-content: flex-end;
+      gap: 10px;
+    }
+    .btn-secondary {
+      padding: 8px 14px;
+      border-radius: 999px;
+      border: 1px solid var(--border);
+      background: #e5e7eb;
+      cursor: pointer;
+      font-size: 13px;
+    }
+    .btn-primary {
+      padding: 8px 14px;
+      border-radius: 999px;
+      border: none;
+      background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+      color: #ffffff;
+      cursor: pointer;
+      font-size: 13px;
+      font-weight: 600;
+    }
+  </style>
 </head>
 <body>
   <header class="topbar">
@@ -96,7 +169,7 @@
           <input id="matricula" name="matricula" placeholder="Matrícula" required>
           <input id="taller" name="taller" placeholder="Taller" required>
           <select id="estado" name="estado" required>
-            </select>
+          </select>
           <input id="garantia" name="garantia" placeholder="Garantía (ej: Daños, RC...)">
           <input id="compromiso_pago" name="compromiso_pago" placeholder="Compromiso de pago">
           <button type="submit" style="background:#6366f1;color:white;">💾 Guardar Expediente</button>
@@ -134,6 +207,24 @@
     </div>
   </div>
 
+  <!-- Modal de notas y recordatorios de siniestro -->
+  <div id="modal-notas" class="modal">
+    <div class="modal-content">
+      <h3>Notas y recordatorio del siniestro <span id="modal-notas-siniestro-id"></span></h3>
+      <div class="modal-notas-campos">
+        <label for="modal-notas-texto">Notas internas:</label>
+        <textarea id="modal-notas-texto" placeholder="Escribe aquí las notas de seguimiento, llamadas, acuerdos con el taller, plazos, etc."></textarea>
+
+        <label for="modal-notas-fecha">Recordarme el día y hora:</label>
+        <input type="datetime-local" id="modal-notas-fecha">
+      </div>
+      <div class="modal-notas-acciones">
+        <button type="button" class="btn-secondary" onclick="cerrarModalNotas()">Cancelar</button>
+        <button type="button" class="btn-primary" onclick="guardarNotasSiniestro()">💾 Guardar notas</button>
+      </div>
+    </div>
+  </div>
+
   <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
   <script src="app.js"></script>
 
@@ -151,6 +242,150 @@
             alert("No hay datos cargados para exportar");
         }
     }
+
+    // Gestión de notas y recordatorios por siniestro (localStorage)
+    // Cada siniestro se identifica por un id que tú controles, normalmente número de siniestro o un id interno.
+    // Debes asegurarte de que en cada fila pones data-siniestro-id con ese mismo valor y un botón que llame a abrirModalNotas.
+
+    let siniestroNotasActual = null;
+
+    function claveNotas(idSiniestro) {
+      return "notas_siniestro_" + idSiniestro;
+    }
+
+    function abrirModalNotas(idSiniestro) {
+      siniestroNotasActual = idSiniestro;
+
+      const spanId = document.getElementById("modal-notas-siniestro-id");
+      const textarea = document.getElementById("modal-notas-texto");
+      const inputFecha = document.getElementById("modal-notas-fecha");
+      const modal = document.getElementById("modal-notas");
+
+      spanId.textContent = idSiniestro;
+
+      const guardado = localStorage.getItem(claveNotas(idSiniestro));
+      if (guardado) {
+        try {
+          const datos = JSON.parse(guardado);
+          textarea.value = datos.texto || "";
+          inputFecha.value = datos.fecha || "";
+        } catch (e) {
+          textarea.value = "";
+          inputFecha.value = "";
+        }
+      } else {
+        textarea.value = "";
+        inputFecha.value = "";
+      }
+
+      modal.classList.add("active");
+    }
+
+    function cerrarModalNotas() {
+      const modal = document.getElementById("modal-notas");
+      modal.classList.remove("active");
+      siniestroNotasActual = null;
+    }
+
+    function guardarNotasSiniestro() {
+      if (!siniestroNotasActual) {
+        return;
+      }
+
+      const textarea = document.getElementById("modal-notas-texto");
+      const inputFecha = document.getElementById("modal-notas-fecha");
+
+      const datos = {
+        texto: textarea.value || "",
+        fecha: inputFecha.value || ""
+      };
+
+      localStorage.setItem(claveNotas(siniestroNotasActual), JSON.stringify(datos));
+
+      marcarFilaRecordatorio(siniestroNotasActual, datos.fecha);
+
+      cerrarModalNotas();
+    }
+
+    function marcarFilaRecordatorio(idSiniestro, fechaISO) {
+      const fila = document.querySelector('tr[data-siniestro-id="' + idSiniestro + '"]');
+      if (!fila) {
+        return;
+      }
+
+      fila.classList.remove("recordatorio-activo");
+      fila.classList.remove("recordatorio-vencido");
+
+      if (!fechaISO) {
+        return;
+      }
+
+      const ahora = new Date();
+      const cuando = new Date(fechaISO);
+
+      if (isNaN(cuando.getTime())) {
+        return;
+      }
+
+      if (cuando.getTime() <= ahora.getTime()) {
+        fila.classList.add("recordatorio-vencido");
+      } else {
+        fila.classList.add("recordatorio-activo");
+      }
+    }
+
+    function revisarRecordatorios() {
+      const ahora = new Date().getTime();
+
+      for (let i = 0; i < localStorage.length; i++) {
+        const key = localStorage.key(i);
+
+        if (!key || !key.startsWith("notas_siniestro_")) {
+          continue;
+        }
+
+        const valor = localStorage.getItem(key);
+        if (!valor) {
+          continue;
+        }
+
+        let datos;
+        try {
+          datos = JSON.parse(valor);
+        } catch (e) {
+          continue;
+        }
+
+        if (!datos || !datos.fecha) {
+          continue;
+        }
+
+        const cuando = new Date(datos.fecha).getTime();
+        if (isNaN(cuando)) {
+          continue;
+        }
+
+        const idSiniestro = key.replace("notas_siniestro_", "");
+
+        marcarFilaRecordatorio(idSiniestro, datos.fecha);
+
+        if (cuando <= ahora) {
+          alert("Recordatorio siniestro " + idSiniestro + ":\n\n" + (datos.texto || "Sin notas"));
+
+          datos.fecha = "";
+          localStorage.setItem(key, JSON.stringify(datos));
+
+          marcarFilaRecordatorio(idSiniestro, "");
+        }
+      }
+    }
+
+    setInterval(revisarRecordatorios, 60000);
+
+    document.addEventListener("DOMContentLoaded", function() {
+      revisarRecordatorios();
+    });
   </script>
 </body>
 </html>
+
