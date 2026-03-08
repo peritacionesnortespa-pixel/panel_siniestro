@@ -134,7 +134,7 @@ function crearTablaHTML(lista) {
   lista.forEach(s => {
     const fecha = s.fecha_peritacion
       ? new Date(s.fecha_peritacion).toLocaleDateString('es-ES')
-      : '---'; // Formato local ES. [web:16]
+      : '---';
 
     const pago = s.compromiso_pago || s.compromisoPago || '---';
 
@@ -146,8 +146,10 @@ function crearTablaHTML(lista) {
       }
     }
 
+    const idSiniestroTexto = String(s.numero_siniestro || s.id || '').trim();
+
     html += `
-      <tr>
+      <tr data-siniestro-id="${idSiniestroTexto}">
         <td>
           <div class="foto-mini" onclick="verArchivos(${s.id})" style="cursor:pointer">
             ${fotoHtml}
@@ -168,6 +170,7 @@ function crearTablaHTML(lista) {
               : ''
             }
             <button class="btn-icon btn-clip" title="Adjuntos" onclick="verArchivos(${s.id})">📎</button>
+            <button class="btn-icon" title="Notas / Recordatorio" onclick="abrirModalNotas('${idSiniestroTexto}')">📝</button>
             <button class="btn-icon btn-trash" title="Borrar" onclick="borrarSiniestroSQL(${s.id})">🗑️</button>
           </div>
         </td>
@@ -187,7 +190,7 @@ async function eliminarArchivoIndividual(urlCompleta, siniestroId) {
     const nombreArchivo = urlCompleta.split('/').pop();
     const { error: deleteError } = await supabaseClient.storage
       .from('siniestros_files')
-      .remove([nombreArchivo]); // Supabase remove. [web:18]
+      .remove([nombreArchivo]);
     if (deleteError) throw deleteError;
 
     const siniestro = siniestros.find(s => s.id === siniestroId);
@@ -234,7 +237,7 @@ async function subirArchivosSeleccionados(event) {
 
       const { data: urlData } = supabaseClient.storage
         .from('siniestros_files')
-        .getPublicUrl(fileName); // getPublicUrl Supabase. [web:18]
+        .getPublicUrl(fileName);
       nuevasUrls.push(urlData.publicUrl);
     }
 
@@ -344,11 +347,9 @@ async function borrarSiniestroSQL(id) {
 // 5. CONTADORES (CORREGIDO PARA SINCRONIZAR PESTAÑAS)
 // ---------------------------------------------------------
 function actualizarContadores() {
-  // BOCADILLO TOTAL: Suma de todo en la base de datos
   const totalEl = document.getElementById('count-total');
   if (totalEl) totalEl.textContent = siniestros.length;
 
-  // BOCADILLO "EN CURSO": Debe coincidir con la pestaña de En Curso
   const countEnCursoEl = document.getElementById('count-en-curso');
   if (countEnCursoEl) {
     const totalEnCursoPestana = siniestros.filter(s =>
@@ -359,7 +360,6 @@ function actualizarContadores() {
     countEnCursoEl.textContent = totalEnCursoPestana;
   }
 
-  // BOCADILLO "CANCELADO": Suma estados 'Cancelado' y 'Archivo_Cancelado'
   const countCanceladoEl = document.getElementById('count-cancelado');
   if (countCanceladoEl) {
     const totalCancelados = siniestros.filter(s =>
@@ -368,20 +368,16 @@ function actualizarContadores() {
     countCanceladoEl.textContent = totalCancelados;
   }
 
-  // BOCADILLO "CERRADO": Suma estados 'Cerrado'
   const countCerradoEl = document.getElementById('count-cerrado');
   if (countCerradoEl) {
     const totalCerrados = siniestros.filter(s => s.estado === 'Cerrado').length;
     countCerradoEl.textContent = totalCerrados;
   }
 
-  // RESTO DE CONTADORES POR ESTADO ESPECÍFICO
   ESTADOS_CONTAR.forEach(estado => {
-    // Saltamos los que ya calculamos manualmente arriba para evitar conflictos
     if (['En curso', 'Cancelado', 'Cerrado'].includes(estado)) return;
 
     const count = siniestros.filter(s => s.estado === estado).length;
-    // Normalización de IDs para los contadores
     const id = `count-${estado
       .toLowerCase()
       .normalize('NFD')
@@ -557,4 +553,127 @@ document.addEventListener('DOMContentLoaded', async () => {
       }
     });
   }
+
+  revisarRecordatoriosNotas();
 });
+
+// ---------------------------------------------------------
+// 8. NOTAS Y RECORDATORIOS POR SINIESTRO (localStorage)
+// ---------------------------------------------------------
+
+let siniestroNotasActual = null;
+
+function claveNotas(idSiniestro) {
+  return 'notas_siniestro_' + idSiniestro;
+}
+
+function abrirModalNotas(idSiniestro) {
+  siniestroNotasActual = idSiniestro;
+
+  const spanId = document.getElementById('modal-notas-siniestro-id');
+  const textarea = document.getElementById('modal-notas-texto');
+  const inputFecha = document.getElementById('modal-notas-fecha');
+  const modal = document.getElementById('modal-notas');
+
+  if (spanId) spanId.textContent = idSiniestro;
+
+  const guardado = localStorage.getItem(claveNotas(idSiniestro));
+  if (guardado) {
+    try {
+      const datos = JSON.parse(guardado);
+      if (textarea) textarea.value = datos.texto || '';
+      if (inputFecha) inputFecha.value = datos.fecha || '';
+    } catch (e) {
+      if (textarea) textarea.value = '';
+      if (inputFecha) inputFecha.value = '';
+    }
+  } else {
+    if (textarea) textarea.value = '';
+    if (inputFecha) inputFecha.value = '';
+  }
+
+  if (modal) modal.classList.add('active');
+}
+
+function cerrarModalNotas() {
+  const modal = document.getElementById('modal-notas');
+  if (modal) modal.classList.remove('active');
+  siniestroNotasActual = null;
+}
+
+function guardarNotasSiniestro() {
+  if (!siniestroNotasActual) return;
+
+  const textarea = document.getElementById('modal-notas-texto');
+  const inputFecha = document.getElementById('modal-notas-fecha');
+
+  const datos = {
+    texto: textarea ? (textarea.value || '') : '',
+    fecha: inputFecha ? (inputFecha.value || '') : ''
+  };
+
+  localStorage.setItem(claveNotas(siniestroNotasActual), JSON.stringify(datos));
+
+  marcarFilaRecordatorioNotas(siniestroNotasActual, datos.fecha);
+
+  cerrarModalNotas();
+}
+
+function marcarFilaRecordatorioNotas(idSiniestro, fechaISO) {
+  const fila = document.querySelector('tr[data-siniestro-id="' + idSiniestro + '"]');
+  if (!fila) return;
+
+  fila.classList.remove('recordatorio-activo');
+  fila.classList.remove('recordatorio-vencido');
+
+  if (!fechaISO) return;
+
+  const ahora = new Date();
+  const cuando = new Date(fechaISO);
+
+  if (isNaN(cuando.getTime())) return;
+
+  if (cuando.getTime() <= ahora.getTime()) {
+    fila.classList.add('recordatorio-vencido');
+  } else {
+    fila.classList.add('recordatorio-activo');
+  }
+}
+
+function revisarRecordatoriosNotas() {
+  const ahora = new Date().getTime();
+
+  for (let i = 0; i < localStorage.length; i++) {
+    const key = localStorage.key(i);
+    if (!key || !key.startsWith('notas_siniestro_')) continue;
+
+    const valor = localStorage.getItem(key);
+    if (!valor) continue;
+
+    let datos;
+    try {
+      datos = JSON.parse(valor);
+    } catch (e) {
+      continue;
+    }
+    if (!datos || !datos.fecha) continue;
+
+    const cuando = new Date(datos.fecha).getTime();
+    if (isNaN(cuando)) continue;
+
+    const idSiniestro = key.replace('notas_siniestro_', '');
+
+    marcarFilaRecordatorioNotas(idSiniestro, datos.fecha);
+
+    if (cuando <= ahora) {
+      alert('Recordatorio siniestro ' + idSiniestro + ':\n\n' + (datos.texto || 'Sin notas'));
+
+      datos.fecha = '';
+      localStorage.setItem(key, JSON.stringify(datos));
+
+      marcarFilaRecordatorioNotas(idSiniestro, '');
+    }
+  }
+}
+
+setInterval(revisarRecordatoriosNotas, 60000);
